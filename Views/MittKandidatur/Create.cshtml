@@ -1,0 +1,47 @@
+﻿@model Valgapplikasjon.Models.MittKandidaturModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@using Microsoft.AspNetCore.Identity
+@using Valgapplikasjon.Areas.Identity
+@inject UserManager<ValgapplikasjonUser> UserManager
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Registrer deg som kandidat</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BrukerId" class="control-label">Epost:</label>
+                <input asp-for="BrukerId" class="form-control" value="@UserManager.GetUserName(User)" readonly />
+                <span asp-validation-for="BrukerId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Sjekkboks" /> @*@Html.DisplayNameFor(model => model.Sjekkboks) *@
+                    Huk av om du ønsker å være kandidat
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lagre" class="btn btn-primary" />
+            </div>
+            <p class="text-danger">NB! Hvis du allerede er registrert som kandidat kan du ikke registrere deg på nytt.<br />
+            Ønsker du å redigere ditt kandidatur kan du gjøre dette i oversikten.
+            </p>         
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Tilbake til oversikt</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

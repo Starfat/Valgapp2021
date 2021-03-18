@@ -1,0 +1,19 @@
+﻿@page
+@model Valgapplikasjon.Models.MittKandidaturModel
+@{
+    Layout = "_Layout";
+}
+<p>Her kan du velge om du ønsker å stille som kandidat til valget. Huk av på boksen hvis du ønsker å være kandidat.</p>
+
+<form asp-action="MittKandidatur" method="post" asp-controller="Home">
+
+    <label for="KandidatId">KandidatId: </label><br />
+    <input type="number" asp-for="KandidatId" name="kandidatId" value="2" readonly /><br />
+    <label for="BrukerId">BrukerId: </label> <br />
+    <input type="text" asp-for="BrukerId" name="brukerId" value="3b438308-8055-411f-b031-086e26395797" /><br />
+    <label for="sjekkboks">Huk av om du ønsker å være kandidat og lagre:</label><br />
+    <input type="checkbox" asp-for="Sjekkboks" name="sjekkboks" value="sjekkboks" id="sjekkboks" /><br />
+    <input type="submit" name="Lagre" value="Lagre" />
+    <hr />
+
+</form>

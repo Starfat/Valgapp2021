@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Valgapplikasjon.Areas.Identity
+
+@inject SignInManager<ValgapplikasjonUser> SignInManager
+@inject UserManager<ValgapplikasjonUser> UserManager
+    
+    <ul class="navbar-nav">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <li class="nav-item" style="align-self: center;">
+                @if (UserManager.GetUserAsync(User).Result.Profilbilde != null)
+                {
+                    <img style="width:40px;height:40px; object-fit:cover; border-radius:30px" src="data:image/*;base64,@(Convert.ToBase64String(UserManager.GetUserAsync(User).Result.Profilbilde))">
+                }
+            </li>
+            <li class="nav-item">
+                <a id="manage" class="nav-link nav-link-custom" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hei @User.Identity.Name</a>
+            </li>
+            <li class="nav-item-loggut">
+                @*Egen klasse for denne linken pga form og button attr*@
+                <form class="nav-link nav-link-custom" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button id="logout" type="submit" class="nav-link btn btn-link text-white">Logg ut</button>
+                </form>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link nav-link-custom" id="register" asp-area="Identity" asp-page="/Account/Register">Ny bruker</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-link-custom" id="login" asp-area="Identity" asp-page="/Account/Login">Logg inn</a>
+            </li>
+        }
+    </ul>

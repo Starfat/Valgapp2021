@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+    <form class="regbruker" id="regbruker" action="" method="post" onSubmit="return validerBruker()">
+   
+        <h1> Registrering </h1>
+        <label for="fornavn"><b>Fornavn:</b></label><br>
+        <input type="text" name="fornavn" id="fornavn" placeholder="Tast inn fornavn" autofocus /><br><br>
+        <label for="etternavn"><b>Etternavn:</b></label><br>
+        <input type="text" name="etternavn" id="etternavn" placeholder="Tast inn etternavn" /><br><br>
+        <label for="epost"><b>E-post:</b></label><br>
+        <input type="text" name="epost" id="epost" placeholder="Eksempel: 123456@usn.no" /><br><br>
+        <label for="regpassord"><b>Passord:</b></label><br>
+        <input type="password" name="regpassord" id="regpassord" placeholder="Mellom 8-15 karakterer | Store og små bokstaver | Minimum ett tall" data-toggle="tooltip" title="Mellom 8-15 karakterer | Store og små bokstaver | Minimum ett tall"/><br><br>
+        <label for="brukertype"><b>Brukertype:</b></label><br>
+        <input type="text" name="brukertype" id="brukertype" value=1 readonly /><br><br>
+        <button type="submit" class="formknapp" id="registrerbrukerKnapp" name="registrerbrukerKnapp">Registrer</button><br><br>
+        <div class="linker">
+            <a class="nav-link nav-link-custom" asp-controller="Home"
+               asp-action="Logginn">Lukk </a>
+        </div>
+        <div id="melding"></div>
+    </form>
+
+    <article>
+
+    
+
+    </article>
+    

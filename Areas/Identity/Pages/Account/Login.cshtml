@@ -1,0 +1,35 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<form class="logginn" id="account" method="post">
+    <h1> Innlogging </h1>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <label asp-for="Input.Email"><b>Brukernavn</b></label><br>
+    <input asp-for="Input.Email" id="bruker" placeholder="Tast inn brukernavn" autofocus /><br>
+    <span asp-validation-for="Input.Email" class="text-danger"></span>
+    <hr>
+    <label asp-for="Input.Password"><b>Passord</b></label><br>
+    <input asp-for="Input.Password" id="passord" placeholder="Tast inn passord" /><br>
+    <span asp-validation-for="Input.Password" class="text-danger"></span>
+    <hr>
+
+        <label asp-for="Input.RememberMe">
+            <input class="passordcheckbox" asp-for="Input.RememberMe" />
+            @Html.DisplayNameFor(m => m.Input.RememberMe)
+        </label>
+
+    <div class="linker">
+        <a class="nav-link nav-link-custom" asp-area="Identity"
+           asp-page="/Account/Register">Ny bruker</a>
+        <a id="forgot-password" asp-page="./ForgotPassword">Glemt passord?</a><br><br>
+    </div>
+    <button type="submit" class="formknapp">Logg inn</button><br><br>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

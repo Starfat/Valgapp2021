@@ -1,0 +1,21 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+    {
+        Layout = (string)parentLayout;
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+
+<h2>Administrer kontoinformasjon</h2> 
+
+    <h4>Endre kontoinformasjon</h4>
+    <hr />
+            <partial name="_ManageNav" />
+            @RenderBody()
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}

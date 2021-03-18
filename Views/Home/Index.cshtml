@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Rektorvalget 2021</h1>
+    <p>I april 2021 gjennomføres det valg av rektor/prorektor for perioden august 2021 til og med juli 2025</p>
+    <hr /><br />
+    <div class="info">
+        <h1>
+            <a class="nav-link nav-link-custom"  asp-area="Identity" asp-page="/Account/Login"> Registrer deg</a>
+        </h1><br />
+        <img class="pilopp" src="~/bilder/pilopp.png" alt="">
+        <p>Klikk på registrer deg, velg "Ny Bruker" og registrer deg med USN-adressen din.</p>
+        <hr><br />
+        <h1>
+            <a class="nav-link nav-link-custom" asp-controller="Home"
+               asp-action="Nominering">Nominer</a>
+        </h1><br />
+        <img class="pilopp" src="~/bilder/pilopp.png" alt="">
+        <p>Klikk på nominer og skriv navnet til den du vil nominere. Det er bare usn ansatte og studenter som kan nomineres.</p>
+        <hr><br />
+        <h1>
+            <a class="nav-link nav-link-custom" asp-controller="Home"
+               asp-action="Avstemming">Stem</a>
+        </h1><br />
+        <img class="pilopp" src="~/bilder/pilopp.png" alt="">
+        <p> Klikk på stem. Søk etter den du vil stemme på og klikk VELG.</p>
+    </div>
+</div>

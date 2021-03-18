@@ -1,0 +1,579 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: blue;
+}
+
+a:hover{
+    color: tomato;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #333333;
+  border-color: black;
+}
+
+.btn-primary:hover {
+    background-color: tomato;
+    border-color: tomato;
+} 
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+navbar-collapse-custom {
+    width: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* lager egen stil på enkelte elementer*/
+
+.navbar-custom { /*Setter egen farge på header*/
+    background-color: #333333;
+    width: 100%;
+}
+
+.footer-custom {
+    background-color: #333333;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-size: 30px 50px;
+}
+
+.navbar-light .navbar-toggler{
+    border: none;
+}
+
+.nav-item{
+    margin: 15px;
+}
+
+.nav-item-loggut{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.navbar-nav .nav-item .nav-link-custom {
+    color: #f2f2f2;
+}
+
+.navbar-nav .nav-item .nav-link-custom:hover {
+    color: tomato;
+}
+
+.valgapplogo{
+    margin-right: 50px;
+}
+
+.info h1 a {
+    margin: 10px;
+    border: solid #333333;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color: #333333;
+}
+
+.pilopp {
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.copyright {
+    color: #f2f2f2;
+    padding: 5px;
+    float: left;
+}
+
+.formknapp { /* styler knapper i samtlige forms */
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #333333;
+    color: #FFFFFF;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.sjekkboksKandidat {
+    height: 30px;
+    width: 30px;
+}
+/*Registrering.cshtml*/
+.registreringsform {
+    display: block;
+    width: 100%;
+    margin: 5px auto 15px auto;
+    padding: 15px;
+    background-color: #F2F2F2;
+    color: #333333;
+    border: solid 1px;
+    border-radius: 5px;
+    z-index: 2;
+    box-shadow: 5px 10px 20px 5px#888888;
+}
+
+    .registreringsform input {
+        position: relative;
+        padding: 5px;
+        margin: 1px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        height: 30px;
+    }
+
+    h2{
+        text-align: center;
+    }
+/*Registrering.cshtml slutt*/
+
+/*Nominering.cshtml*/
+.nominerKandidatSkjema {
+    display: block;
+    width: 100%;
+    margin: 5px auto;
+    padding: 15px;
+    background-color: #F2F2F2;
+    color: #333333;
+    border: solid 1px;
+    border-radius: 5px;
+    box-shadow: 5px 10px 20px 5px#888888;
+}
+
+    .nominerKandidatSkjema input {
+        position: relative;
+        padding: 5px;
+        margin: 1px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        height: 30px;
+    }
+
+.nFormer { /* pakker alle nomineringsformer og sentrerer */
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.kandidatformN {
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    margin: 5px auto 5px auto;
+    padding: 10px;
+    box-shadow: 5px 10px 20px 5px#888888;
+}
+
+.kandidatformN p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.kandidatbilde {
+    text-align: center;
+}
+
+    .kandidatbilde img {
+        width: 180px;
+        border: transparent;
+        border-radius: 40px;
+    }
+
+/*Nominering.cshtml slutt*/
+
+/* ----- Avstemming ----- */
+
+.finnKandidat {
+    margin: 5px;
+}
+
+#faktultetValg {
+    width: 100%;
+    margin: 5px auto 5px auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px#888888;
+}
+
+#instituttValg {
+    width: 100%;
+    margin: 5px auto 5px auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px#888888;
+}
+
+#kandidatSok {
+    width: 100%;
+    margin: 5px auto 5px auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px#888888;
+}
+
+.kandidatformA {
+    display: block;
+    border: 1px solid #dfdfdf;
+    padding: 25px;
+    margin: 5px auto 5px auto;
+    background-color: #FFFFFF;
+    box-shadow: 5px 10px 20px 5px#888888;
+}
+
+.kandidatSøk {
+    width: 150px;
+    margin-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 30px;
+}
+
+
+/* Avstemming slutt*/
+
+/* ----- logginn ----- */
+
+.logginn {
+    display: block;
+    width: 100%;
+    margin: 5px auto 5px;
+    padding: 15px;
+    background-color: #F2F2F2;
+    color: #333333;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 10px 20px 5px#888888;
+}
+
+    .logginn h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .logginn label {
+        position: relative;
+        text-align: left;
+    }
+
+.logginnBilde {
+    width: 100px;
+    height: 100px;
+    border: none;
+    background-color: #F2F2F2;
+}
+
+.loginbilde-pos {
+    text-align: center;
+}
+
+.logginn h1 {
+    column-span: none;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 50px;
+}
+
+.logginn .formknapp {
+    text-align: center;
+    padding: 5px;
+    height: 40px;
+}
+
+.logginn input {
+    position: relative;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 40px;
+}
+
+.formknapp input:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+.linker {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+    .linker a {
+        color: blue;
+        text-decoration: underline;
+    }
+
+.logginn label .passordcheckbox {
+    height: 20px;
+}
+#logout:hover{
+    background-color: tomato;
+}
+/* logginn slutt */
+
+/* profil */
+.profilnav {
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+.profilnav .nav-item .nav-link {
+    color: #333333;
+}
+    .profilnav .nav-item .nav-link:hover {
+        color: tomato;
+    }
+
+#profile-form {
+    margin-bottom: 20px;
+}
+#update-profile-button{
+    background-color: #333333;
+}
+
+
+#email-form {
+    margin-bottom: 20px;
+}
+#change-email-button {
+    background-color: #333333;
+}
+
+#change-password-form {
+    margin-bottom: 20px;
+}
+#update-password-button {
+    background-color: #333333;
+}
+
+#last-ned-button {
+    background-color: #333333;
+}
+
+#delete{
+    background-color: red;
+}
+
+#sjekkboks {
+    height: 30px;
+    width: 30px;
+}
+/* registrer bruker form */
+.regbruker {
+    width: 100%;
+    margin: 5px auto 25px;
+    padding: 15px;
+    background-color: #F2F2F2;
+    color: #333333;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 10px 20px 5px#888888;
+}
+
+    .regbruker h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .regbruker label {
+        position: relative;
+        text-align: left;
+    }
+
+    .regbruker input {
+        position: relative;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        height: 40px;
+    }
+
+    .regbruker .formknapp {
+        height: 50px;
+    }
+    .regbruker a {
+        color: blue;
+        text-align: center;
+        text-decoration: underline;
+        margin: auto;
+    }
+
+/* registrer bruker slutt */
+
+.visBruker {
+    list-style-type: none;
+}
+
+@media(min-width: 600px) {
+    .registreringsform {
+        display: block;
+        width: 50%;
+        margin: auto;
+    }
+
+    .nav-item {
+        margin: 5px;
+    }
+
+    .valgapplogo {
+        margin-right: 20px;
+    }
+
+    .nominerKandidatSkjema {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+
+    .kandidatformN {
+        width: 32%;
+        margin: auto auto 5px auto;
+    }
+
+    .regbruker {
+        width: 70%;
+    }
+
+    .logginn {
+        width: 70%;
+    }
+
+}
+
+@media (min-width: 850px) {
+    .aFormer {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .kandidatformA { 
+        width: 40%;
+    }
+
+    .finnKandidat {
+        margin: 5px auto 10px auto;
+        width: 50%;
+    }
+}
+
+    @media(min-width: 1280px) {
+        .nav-item {
+            margin: 20px;
+        }
+
+        .aFormer {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #faktultetValg {
+            height: 40px;
+        }
+
+        #instituttValg {
+            height: 40px;
+        }
+
+        #kandidatSok {
+            height: 40px;
+        }
+        /* ----- logginn ----- */
+
+        .logginn {
+            display: block;
+            width: 50%;
+        }
+
+        .logginn .formknapp {
+            text-align: center;
+            padding: 5px;
+            height: 50px;
+        }
+
+        .logginn input {
+            position: relative;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            height: 50px;
+        }
+
+
+        /* logginn slutt */
+        /* registrer bruker form */
+
+        .regbruker {
+            width: 50%;
+        }
+            .regbruker input { 
+                height: 50px;
+            }
+
+    }

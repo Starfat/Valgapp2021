@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Valgapplikasjon.Models.MittKandidaturModel>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@using Microsoft.AspNetCore.Identity
+@using Valgapplikasjon.Areas.Identity
+@inject UserManager<ValgapplikasjonUser> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Mitt kandidatur</h1>
+<hr />
+<p>Her kan du registrere deg som kandidat, se detaljer om ditt kandidatur og redigere ditt valg.</p>
+<p>Hvis du ikke ønsker å være kandidat trenger du ikke foreta deg noe.</p>
+<p>
+    <a asp-action="Create">Registrer deg</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BrukerId)
+            </th>
+            <th>
+                Kandidat @*@Html.DisplayNameFor(model => model.Sjekkboks)*@
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)  
+        {
+            @if (item.BrukerId == @UserManager.GetUserName(User)) { // Tester på hvilken bruker som er logget inn å viser rett kandidatur (ikke alle)
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrukerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sjekkboks)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.KandidatId">Rediger |</a>
+                <a asp-action="Details" asp-route-id="@item.KandidatId">Detaljer |</a>
+                <a asp-action="Delete" asp-route-id="@item.KandidatId">Slett kandidatur</a>
+            </td>
+        </tr>
+            }
+        }
+    </tbody>
+</table>

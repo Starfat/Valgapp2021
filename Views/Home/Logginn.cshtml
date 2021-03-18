@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+
+<form class="logginn" id="logginn" action="" method="post">
+    <h1> Innlogging </h1>
+    <label for="brukernavn"><b>Brukernavn</b></label><br>
+    <input type="text" name="bruker" id="bruker" placeholder="Tast inn brukernavn" autofocus /><br>
+    <hr>
+    <label for="passord"><b>Passord</b></label><br>
+    <input type="password" name="passord" id="passord" placeholder="Tast inn passord" /><br>
+    <hr>
+    <div class="linker">
+        <a class="nav-link nav-link-custom" asp-controller="Home"
+           asp-action="Registrerbruker">Ny bruker</a><br>
+        <a href="#">Glemt passord?</a><br><br>
+    </div>
+    <button type="submit" class="formknapp" value="sjekk" name="xyz">Logg inn</button><br><br>
+</form>

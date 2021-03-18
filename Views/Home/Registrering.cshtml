@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+
+<h2>Registrer kandidat</h2>
+<form method="post" action="" class="registreringsform" id="registrerKandidatSkjema" name="registrerKandidatSkjema">
+    <label>Fornavn </label><br /> <input type="text" id="fornavn" name="fornavn" required /> <br /> <br />
+    <label>Etternavn </label> <br /> <input type="text" id="etternavn" name="etternavn" required /> <br /> <br />
+    <label>KandidatID </label><br /> <input type="text" id="kandidatid" name="kandidatid" required /> <br /> <br />
+    Bilde <br /> <input type="file" id="fil" name="fil" size="60" /> <br /> <br />
+    <input type="submit" value="Registrer kandidat" id="registrerKandidatKnapp" class="formknapp" name="registrerKandidatKnapp" />
+    <input type="reset" value="Nullstill" id="nullstill" class="formknapp" name="nullstill" /> <br />
+</form>

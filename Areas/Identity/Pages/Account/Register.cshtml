@@ -1,0 +1,45 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<form class="regbruker" id="regbruker" asp-route-returnUrl="@Model.ReturnUrl" method="post" onSubmit="return validerBruker()">
+
+    <h1> Registrering </h1>
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <label asp-for="Input.Fornavn"><b>Fornavn:</b></label><br>
+    <input asp-for="Input.Fornavn" id="fornavn" placeholder="Tast inn fornavn" autofocus /><br>
+    <span asp-validation-for="Input.Fornavn" class="text-danger"></span><br />
+
+    <label asp-for="Input.Etternavn"><b>Etternavn:</b></label><br>
+    <input asp-for="Input.Etternavn" id="etternavn" placeholder="Tast inn etternavn" /><br>
+    <span asp-validation-for="Input.Etternavn" class="text-danger"></span><br />
+
+    <label asp-for="Input.Email"><b>E-post:</b></label><br>
+    <input asp-for="Input.Email" id="epost" placeholder="Eksempel: 123456@usn.no" /><br>
+    <span asp-validation-for="Input.Email" class="text-danger"></span><br />
+
+    <label asp-for="Input.Password"><b>Passord:</b></label><br>
+    <input asp-for="Input.Password" id="regpassord" placeholder="Minimum 8 karakterer | Store og små bokstaver | Minimum ett tall" data-toggle="tooltip" title="Mellom 8-15 karakterer | Store og små bokstaver | Minimum ett tall" /><br>
+    <span asp-validation-for="Input.Password" class="text-danger"></span><br />
+
+    <label asp-for="Input.ConfirmPassword"><b>Bekreft passord:</b></label>
+    <input asp-for="Input.ConfirmPassword" id="regpassord" placeholder="Minimum 8 karakterer | Store og små bokstaver | Minimum ett tall" data-toggle="tooltip" title="Mellom 8-15 karakterer | Store og små bokstaver | Minimum ett tall" />
+    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span><br />
+
+    <label for="brukertype"><b>Brukertype:</b></label><br>
+    <input type="text" name="brukertype" id="brukertype" value=1 readonly /><br><br>
+    <button type="submit" class="formknapp" id="registrerbrukerKnapp" name="registrerbrukerKnapp">Registrer</button><br><br>
+    <div class="linker">
+        <a class="nav-link nav-link-custom" asp-area="Identity"
+           asp-page="/Account/Login">Lukk</a>
+    </div>
+    <div id="melding"></div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
